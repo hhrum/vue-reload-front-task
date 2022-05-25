@@ -1,0 +1,19 @@
+@import "variables";
+
+@mixin scaleXS {
+  @media screen and (max-width: $breakpoint-sm) {
+    @content
+  }
+}
+
+@mixin scaleSM {
+  @media screen and (max-width: $breakpoint-md) {
+    @content
+  }
+}
+
+@mixin scaleMD {
+  @media screen and (max-width: $breakpoint-xl) {
+    @content
+  }
+}
