@@ -31,6 +31,10 @@ export default {
     font-size: 26px;
     line-height: 32px;
   }
+
+  @include scaleMD {
+    margin: 0 16px 24px;
+  }
 }
 
 </style>

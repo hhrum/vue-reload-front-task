@@ -19,6 +19,7 @@ export default {
   border-radius: 24px;
 
   color: $white-color;
+  text-align: center;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -33,6 +34,16 @@ export default {
 
   &:active {
     background-color: $accent-color--dark;
+  }
+
+  @include scaleMD {
+    padding: 8px 24px;
+
+    font-size: 26px;
+  }
+
+  @include scaleXS {
+    width: 100%;
   }
 }
 

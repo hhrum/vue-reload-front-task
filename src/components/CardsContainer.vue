@@ -85,6 +85,7 @@ export default  {
     max-height: 0 !important;
     opacity: 0;
     pointer-events: none;
+    overflow: hidden;
   }
 
   @include scaleMD {
