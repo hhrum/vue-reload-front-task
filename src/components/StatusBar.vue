@@ -28,6 +28,10 @@ export default {
   &.error {
     background-color: $error-color;
   }
+
+  @include scaleMD {
+    width: 4px;
+  }
 }
 
 </style>

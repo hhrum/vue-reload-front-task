@@ -16,6 +16,8 @@
 
         <div class="support-card__burning">
           {{ burningCount }}
+          <br>
+          <svg-icon class="support-card__fire" type="mdi" :path="path" />
         </div>
 
         <div class="support-card__progress-bar">
@@ -38,14 +40,23 @@ import Card from "@/components/Card"
 import ProgressBar from "@/components/ProgressBar";
 import StatusBar from "@/components/StatusBar";
 
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiFire } from '@mdi/js'
+
 export default {
   name: "SupportCard",
   components: {
     StatusBar,
     ProgressBar,
     Card,
+    SvgIcon,
   },
   props: ["title", "progress", "isError", "burningCount", "inworkCount", "timeFakt"],
+  data() {
+    return {
+      path: mdiFire
+    }
+  }
 }
 </script>
 
@@ -88,7 +99,7 @@ export default {
   &__inwork {
     grid-area: 1 / 1 / 3 / 2;
 
-    margin-right: 6px;
+    margin-right: 8px;
 
     color: $card-black-color;
     font-style: normal;
@@ -97,6 +108,7 @@ export default {
     line-height: 42px;
 
     @include scaleMD {
+      margin-right: 10px;
       font-size: 62px;
       line-height: 62px;
     }
@@ -107,6 +119,10 @@ export default {
 
     margin-right: 10px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     color: $error-color;
     font-style: normal;
     font-weight: 500;
@@ -114,8 +130,19 @@ export default {
     line-height: 26px;
 
     @include scaleMD {
+      margin-right: 12px;
       font-size: 38px;
       line-height: 38px;
+    }
+  }
+
+  &__fire {
+    width: 16px;
+    height: 16px;
+
+    @include scaleMD {
+      width: 20px;
+      height: 20px;
     }
   }
 

@@ -44,6 +44,15 @@ export default {
     &.error {
       background-color: $error-color;
     }
+
+    @include scaleMD {
+      border-radius: 8px;
+    }
+  }
+
+  @include scaleMD {
+    height: 16px;
+    border-radius: 8px;
   }
 }
 
